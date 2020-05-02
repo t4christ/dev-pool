@@ -6,28 +6,28 @@ Developers pool is an application that allows developers connect to one another 
 This application was built with reactjs and nodejs.
 
 # Prerequistes
-node
-npm
-create-react-app
+1. node
+2. npm
+3. create-react-app
 
 # Installing and running backend server
 
-install node on your machine
-run npm install to install all the required packages.
-run 'npm run start' to get the server running.
+1. install node on your machine
+2. run npm install to install all the required packages.
+3. run 'npm run start' to get the server running.
 
 
 
 # Installing and running frontend server
 
-install create-react-app on your machine
-run npm install to install all the required packages.
-run 'npm run start' to get the server running.
+1. install create-react-app on your machine
+2. run npm install to install all the required packages.
+3. run 'npm run start' to get the server running.
 
 
 
 
 Built With
-nodejs (server)
-expressjs (handling routes,requests and views)
-reactjs (frontend framework)
+1. nodejs (server)
+2. expressjs (handling routes,requests and views)
+3. reactjs (frontend framework)
