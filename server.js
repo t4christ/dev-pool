@@ -1,11 +1,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import logger from 'morgan';
 import mdb from './config/db/keys';
-import users from './routes/api/users'
-import profile from './routes/api/profile'
-import posts from './routes/api/posts'
-
+import passport from 'passport';
+import { userRouter, profileRouter, postRouter} from './routes/api';
 const app = express();
+
 
 // Connect to Mongodb
 mongoose
@@ -14,13 +15,20 @@ mongoose
 .catch(err => console.log(err))
 
 
-app.get('/',(req,res)=> res.send('Hello'));
+//Passport Middleware
+app.use(passport.initialize());
 
+//Passport Config
+
+
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Use Routes
-app.use('/api/users',users);
-app.use('/api/profile',profile);
-app.use('/api/posts',posts);
+app.use('/api/users',userRouter);
+app.use('/api/profile',profileRouter);
+app.use('/api/posts',postRouter);
 
 
 const port = process.env.PORT || 5000;
